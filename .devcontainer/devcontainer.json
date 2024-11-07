@@ -26,7 +26,7 @@
 	
     	// don't use "postAttachCommand", it only runs if vscode web is opened
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "/bin/bash ./.devcontainer/setup-codeit-tunnel.sh"
+	"postCreateCommand": "/bin/bash ./.devcontainer/codeit-tunnel-setup.sh"
 	
 	// "postCreateCommand": "yarn install"
 
