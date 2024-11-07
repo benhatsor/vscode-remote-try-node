@@ -23,7 +23,7 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [3000],
 
-    	"postAttachCommand": "gh codespace ports visibility 3000:public -c $CODESPACE_NAME",
+    	"postAttachCommand": "brew install gh && gh codespace ports visibility 3000:public -c $CODESPACE_NAME",
 
 	// Use 'portsAttributes' to set default properties for specific forwarded ports. 
 	// More info: https://containers.dev/implementors/json_reference/#port-attributes
