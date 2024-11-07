@@ -6,6 +6,7 @@
 'use strict';
 
 const express = require('express');
+const cors = require('cors');
 
 // Constants
 const PORT = 3000;
@@ -13,6 +14,10 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
+
+app.use(cors());
+
+
 app.get('/', (req, res) => {
 	res.set('Content-Type', 'text/html');
 	res.send(Buffer.from('<h2>Test String</h2>'));
