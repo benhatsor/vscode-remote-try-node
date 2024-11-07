@@ -2,47 +2,41 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-	"name": "Node.js",
+	
+	"name": "Codeit Tunnel",
+	
+	
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye",
 
+	
+	// Features to add to the dev container. More info: https://containers.dev/features.
 
+	// import GitHub CLI to change the tunnel's forwarded port
+	// to public in setup-codeit-tunnel.sh (see below)
+	"features": {
+		"github-cli": "latest"
+	 },
+
+	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace
 	"forwardPorts": [4242],
 
+	
     	// don't use "postAttachCommand", it only runs if vscode web is opened
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": ""
-
-
-
+	"postCreateCommand": "/bin/bash ./.devcontainer/setup-codeit-tunnel.sh"
 	
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	// "postCreateCommand": "yarn install"
 
-	// Configure tool-specific properties.
-	// "customizations": {
-	// 	// Configure properties specific to VS Code.
-	// 	"vscode": {
-	// 		"settings": {},
-	// 		"extensions": [
-	// 			"streetsidesoftware.code-spell-checker"
-	// 		]
-	// 	}
-	// },
 
 	// Use 'portsAttributes' to set default properties for specific forwarded ports. 
 	// More info: https://containers.dev/implementors/json_reference/#port-attributes
 	// "portsAttributes": {
 	// 	"4242": {
-	// 		"label": "Hello Remote World",
-	// 		"onAutoForward": "notify"
+	// 		"label": "Codeit Tunnel"
 	// 	}
 	// }
 
-	//"postCreateCommand": "yarn install"
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }
